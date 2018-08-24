@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Note;
+use Auth;
+
+class SearchController extends Controller
+{
+    public function search($query, Note $note){
+        if($note->find(Auth::user()->id)->where('deleted',0)->where('user_id',Auth::user()->id)){
+            $note_fetch = $note->find(Auth::user()->id)->where('deleted',0)->where('user_id',Auth::user()->id)
+            ->where('title','LIKE','%'.$query.'%')
+            ->orWhere('note','LIKE','%'.$query.'%')
+            ->get();
+        }else{
+            $note_fetch = [];
+        }
+        return $note_fetch;
+    }
+}
