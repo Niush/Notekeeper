@@ -9,7 +9,7 @@ use Auth;
 class SearchController extends Controller
 {
     public function search($query, Note $note){
-        if($note->find(Auth::user()->id)){
+        if(true){
             $note_fetch = $note->find(Auth::user()->id)
             ->where('user_id',Auth::user()->id)
             ->where('deleted',0)
