@@ -28,6 +28,7 @@ class NoteController extends Controller
             $data['note'] = $request->input('note');
             $data['user_id'] = Auth::user()->id;
             $data['edits'] = 1;
+            $data['deleted'] = 0;
             $data['created_at'] = date('Y-m-d H:i:s');
             DB::table('notes')->insert($data);
             return redirect()->route('home')->with('msgS','New Note Added, Great !!');
