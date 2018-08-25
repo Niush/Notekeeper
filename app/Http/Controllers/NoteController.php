@@ -52,8 +52,10 @@ class NoteController extends Controller
     public function trash(Note $note){
         $data = [];
         try{
-            if($note->find(Auth::user()->id)){
-                $note_fetch = $note->find(Auth::user()->id)->where('deleted',1)->where('user_id',Auth::user()->id)->get();
+            if(DB::table('notes')->where('user_id',Auth::user()->id)){
+                $note_fetch = DB::table('notes')->where('user_id',Auth::user()->id)
+                    ->where('deleted',1)
+                    ->get();
             }else{
                 return view('home')->with('data',$data);
             }
