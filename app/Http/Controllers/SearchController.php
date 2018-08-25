@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Note;
 use Auth;
+use DB;
 
 class SearchController extends Controller
 {
     public function search($query, Note $note){
         if(true){
-            return Auth::user()->id;
-            $note_fetch = $note->find(Auth::user()->id)
+            return DB::table('notes');
+            $note_fetch = DB::table('notes')->find(Auth::user()->id)
             ->where('user_id',Auth::user()->id)
             ->where('deleted',0)
             ->where(function($continue) use ($query) {
