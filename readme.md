@@ -1,4 +1,6 @@
 ## Note Keeper
+<h3><a href="https://nsnotekeeper.herokuapp.com">Live Preview</a></h3>
+
 Keep All Your Notes Safe<br/>
 Access Anytime<br/>
 Edit Delete and Add As Many Notes for Free<br/>
@@ -12,6 +14,7 @@ Used Materializecss for UI design.
 </div>
 
 <br/>
+<h3><a href="https://nsnotekeeper.herokuapp.com">| L i v e | P r e v i e w |</a></h3>
 
 ## Security Vulnerabilities
 
