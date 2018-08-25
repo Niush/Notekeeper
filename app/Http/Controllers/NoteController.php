@@ -93,7 +93,7 @@ class NoteController extends Controller
 
             return redirect()->route('home')->with('msgS','Note Edited Successfully.');
         }else{
-            if($note->find(Auth::user()->id)->where('user_id', Auth::user()->id)->where('id', $id)->get()){
+            if($note->find(Auth::user()->id)){
                 $note_fetch = $note->find(Auth::user()->id)->where('user_id', Auth::user()->id)->where('id', $id)->get();
                 if(sizeof($note_fetch) > 0){
                     $data['title'] = $note_fetch[0]['title'];
