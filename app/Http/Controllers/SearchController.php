@@ -19,7 +19,7 @@ class SearchController extends Controller
             })
             ->get();
         }else{
-            $note_fetch = [];
+            $note_fetch = ['No Result'];
         }
         return $note_fetch;
     }
