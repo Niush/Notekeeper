@@ -17,7 +17,7 @@ class CreateNotesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('note');
-            $table->number('edits');
+            $table->integer('edits');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('deleted');
