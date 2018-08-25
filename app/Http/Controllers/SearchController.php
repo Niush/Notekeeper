@@ -10,11 +10,8 @@ use DB;
 class SearchController extends Controller
 {
     public function search($query, Note $note){
-        if(true){
-            return DB::table('notes')->where('user_id',Auth::user()->id)->get();
-            $note_fetch = DB::table('notes')->find(Auth::user()->id)
-            ->where('user_id',Auth::user()->id)
-            ->where('deleted',0)
+        if(DB::table('notes')->where('user_id',Auth::user()->id)){
+            $note_fetch = return DB::table('notes')->where('user_id',Auth::user()->id)->where('deleted',0)
             ->where(function($continue) use ($query) {
                 $continue->where('title','LIKE','%'.$query.'%')
                 ->orWhere('note','LIKE','%'.$query.'%');
