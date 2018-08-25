@@ -98,7 +98,8 @@ class NoteController extends Controller
             if(DB::table('notes')->where('user_id',Auth::user()->id)){
                 $note_fetch = DB::table('notes')->where('user_id',Auth::user()->id)->where('id', $id)->get();
                 
-                if(sizeof($note_fetch) > 0){
+                $result = json_decode($note_fetch, true);
+                if(sizeof($result) > 0){
                     $data['title'] = $note_fetch[0]['title'];
                     $data['note'] = $note_fetch[0]['note'];
                     $data['id'] = $note_fetch[0]['id'];
