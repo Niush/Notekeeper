@@ -57,10 +57,10 @@ class NoteController extends Controller
                     ->where('deleted',1)
                     ->get();
             }else{
-                return view('home')->with('data',$data);
+                return redirect()->route('home');
             }
         }catch(\Exception $e){
-            return view('home')->with('data',$data);
+            return redirect()->route('home');
         }
         $data = $note_fetch;
         return view('trash')->with('data',$data);
