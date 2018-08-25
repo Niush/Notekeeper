@@ -10,6 +10,7 @@ class SearchController extends Controller
 {
     public function search($query, Note $note){
         if(true){
+            return $note->find(Auth::user()->id);
             $note_fetch = $note->find(Auth::user()->id)
             ->where('user_id',Auth::user()->id)
             ->where('deleted',0)
