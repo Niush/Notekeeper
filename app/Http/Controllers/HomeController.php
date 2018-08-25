@@ -41,6 +41,6 @@ class HomeController extends Controller
         }
         //return $note_fetch;
         $data = $note_fetch;
-        return view('home')->with(compact('data'));
+        return view('home')->with('data', $data);
     }
 }
