@@ -16,6 +16,7 @@
         </tr>
     </thead>
 
+    <?php $result = json_decode($data, true); ?>
     @foreach($data as $d)
     <tbody>
         <tr>
