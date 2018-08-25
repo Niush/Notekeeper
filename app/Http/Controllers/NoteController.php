@@ -100,10 +100,10 @@ class NoteController extends Controller
                 
                 $result = json_decode($note_fetch, true);
                 if(sizeof($result) > 0){
-                    $data['title'] = $note_fetch[0]['title'];
-                    $data['note'] = $note_fetch[0]['note'];
-                    $data['id'] = $note_fetch[0]['id'];
-                    $data['edits'] = $note_fetch[0]['edits'];
+                    $data['title'] = $result[0]['title'];
+                    $data['note'] = $result[0]['note'];
+                    $data['id'] = $result[0]['id'];
+                    $data['edits'] = $result[0]['edits'];
                 }else{
                     return redirect()->route('home')->with('msgE','Invalid Note Chosen.');
                 }
