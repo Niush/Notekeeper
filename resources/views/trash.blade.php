@@ -17,7 +17,7 @@
     </thead>
 
     <?php $result = json_decode($data, true); ?>
-    @foreach($data as $d)
+    @foreach($result as $d)
     <tbody>
         <tr>
         <td>{{ $d['title'] }}</td>
