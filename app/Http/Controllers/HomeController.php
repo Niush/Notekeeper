@@ -29,7 +29,7 @@ class HomeController extends Controller
         $data = [];
         //DB::table('notes')->find(Auth::user()->id);
         try{
-            if($note->find(Auth::user()->id)->where('deleted',0)->where('user_id',Auth::user()->id)){
+            if($note->find(Auth::user()->id)){
                 $note_fetch = $note->find(Auth::user()->id)->where('deleted',0)->where('user_id',Auth::user()->id)->get();
             }else{
                 return view('home')->with('data',$data);
