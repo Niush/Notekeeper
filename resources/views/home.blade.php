@@ -61,8 +61,8 @@
     @foreach($data as $d)
     <tbody>
         <tr>
-        <td>{{ $d['title'] }}</td>
-        <td>{!! nl2br(e($d['note'])) !!}</td>
+        <td>---</td>
+        <td>--</td>
         <td>-</td>
         <td>
             <a href="edit/{{ $d['id'] }}" class="btn success waves-effect" onclick="return confirm('Are You Sure You Want to Edit ?\n\n{{ $d['title'] }}');">Edit</a>
