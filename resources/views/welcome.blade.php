@@ -36,6 +36,7 @@
             <br/>
             <br/>
         @endguest
+        <h6 style="color:red;font-width:700;">!! Not Much of a Encryption. It's Just me Playing With Laravel. !!</h6>
     </div>
 </div>
 
